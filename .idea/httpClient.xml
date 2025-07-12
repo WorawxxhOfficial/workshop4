@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="HttpClientEndpointsTabState">
+    <option name="requestToText" value="&lt;CachedHttpClientTabRequests&gt;&#10;  &lt;entry key=&quot;a6ac0f5f5f1decee8eddcc6e1fc1fefa5cdd3292&quot; value=&quot;###&amp;#10;GET http://localhost:8080/books/{{id}}&quot; /&gt;&#10;  &lt;entry key=&quot;ffb845fdce82e93d8d9754eeec8f3d47fb113062&quot; value=&quot;###&amp;#10;PUT http://localhost/books/{{id}}&amp;#10;Content-Type: application/json&amp;#10;&amp;#10;{&amp;#10;  &amp;quot;title&amp;quot;: &amp;quot;&amp;quot;,&amp;#10;  &amp;quot;author&amp;quot;: &amp;quot;&amp;quot;&amp;#10;}&quot; /&gt;&#10;  &lt;entry key=&quot;5e858fac20c21c24832703c5c8830bddd02521e9&quot; value=&quot;###&amp;#10;GET http://localhost:8080/books&quot; /&gt;&#10;  &lt;entry key=&quot;3e01f4012dfbd7981b960c33db0ff376f066568b&quot; value=&quot;###&amp;#10;POST http://localhost:8080/books&quot; /&gt;&#10;  &lt;entry key=&quot;56ba74cf4f8e5e3df1db97ab82e29734f72c98a1&quot; value=&quot;###&amp;#10;GET http://localhost:8080/health&quot; /&gt;&#10;  &lt;entry key=&quot;8d0badd03278447ac8728a850f282d2b3097c1d1&quot; value=&quot;###&amp;#10;DELETE http://localhost/books/{{id}}&quot; /&gt;&#10;&lt;/CachedHttpClientTabRequests&gt;" />
+  </component>
+</project>

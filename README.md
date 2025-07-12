@@ -1,41 +1,53 @@
-# ktor-sample
+# Book Lending Library API
 
-This project was created using the [Ktor Project Generator](https://start.ktor.io).
+Server จะรันที่ `http://localhost:8080`
 
-Here are some useful links to get you started:
+## API Endpoints
 
-- [Ktor Documentation](https://ktor.io/docs/home.html)
-- [Ktor GitHub page](https://github.com/ktorio/ktor)
-- The [Ktor Slack chat](https://app.slack.com/client/T09229ZC6/C0A974TJ9). You'll need
-  to [request an invite](https://surveys.jetbrains.com/s3/kotlin-slack-sign-up) to join.
+### Books
 
-## Features
+- `GET /books` - ดึงรายการหนังสือทั้งหมด
+- `GET /books/{id}` - ดึงหนังสือตาม ID
+- `POST /books` - เพิ่มหนังสือใหม่
+- `PUT /books/{id}` - แก้ไขข้อมูลหนังสือ
+- `DELETE /books/{id}` - ลบหนังสือ
 
-Here's a list of features included in this project:
+### Lending Records
 
-| Name                                               | Description                                                 |
-| ----------------------------------------------------|------------------------------------------------------------- |
-| [AsyncAPI](https://start.ktor.io/p/asyncapi)       | Generates and serves AsyncAPI documentation                 |
-| [Routing](https://start.ktor.io/p/routing-default) | Allows to define structured routes and associated handlers. |
+- `GET /lending` - ดึงรายการการยืมทั้งหมด
+- `GET /lending/{id}` - ดึงรายการการยืมตาม ID
+- `GET /lending/book/{bookId}` - ดึงรายการการยืมตาม ID หนังสือ
+- `GET /lending/active` - ดึงรายการการยืมที่ยังไม่ได้คืน
+- `POST /lending` - ยืมหนังสือ (สร้างรายการการยืม)
+- `PUT /lending/{id}` - แก้ไขรายการการยืม
+- `DELETE /lending/{id}` - ลบรายการการยืม
+- `POST /lending/{id}/return` - คืนหนังสือ
 
-## Building & Running
 
-To build or run the project, use one of the following tasks:
 
-| Task                          | Description                                                          |
-| -------------------------------|---------------------------------------------------------------------- |
-| `./gradlew test`              | Run the tests                                                        |
-| `./gradlew build`             | Build everything                                                     |
-| `buildFatJar`                 | Build an executable JAR of the server with all dependencies included |
-| `buildImage`                  | Build the docker image to use with the fat JAR                       |
-| `publishImageToLocalRegistry` | Publish the docker image locally                                     |
-| `run`                         | Run the server                                                       |
-| `runDocker`                   | Run using the local docker image                                     |
-
-If the server starts successfully, you'll see the following output:
 
 ```
-2024-12-04 14:32:45.584 [main] INFO  Application - Application started in 0.303 seconds.
-2024-12-04 14:32:45.682 [main] INFO  Application - Responding at http://0.0.0.0:8080
-```
+src/
+├── main/kotlin/
+│   ├── models/
+│   │   ├── Book.kt
+│   │   └── LendingRecord.kt
+│   ├── repositories/
+│   │   ├── BookRepository.kt
+│   │   └── LendingRecordRepository.kt
+│   ├── services/
+│   │   └── LibraryService.kt
+│   ├── routes/
+│   │   ├── BookRoutes.kt
+│   │   └── LendingRoutes.kt
+│   └── Application.kt
+└── test/kotlin/
+    ├── BookRepositoryTest.kt
+    ├── LendingRecordRepositoryTest.kt
+    └── LibraryServiceTest.kt
+``` 
+
+---
+
+
 
